@@ -1,0 +1,31 @@
+Access rights of a file in linux is determined by a 10 bit string which might look like -rw-r--r--.
+
+The first bit represents whether it is a file or a directory
+- represents a file
+d represents a directory
+
+___ ___ ___
+rwx rwx rwx
+    OR
+www www www
+
+rwx = 7 and so
+
+777 means full rights
+
+0 means reset (-)
+1 means set   (r/w/x depending on the bit's position)
+
+for eg., in the example file where the access rights was -rw-r--r--,
+
+first of all this is a file and not a directory (gotten from the first bit)
+
+now taking the remaining bit rw-r--r--, lets fill all character positions with 1 and all -'s with 0, 
+
+thus giving us 110100100 which roughly translates to 644.
+
+The above rights state that 
+
+1. The file owner(110) has read and write permissions while no execute permission
+2. The group owner of the file (100) has only read permissions
+3. All other users (100) have only read permissions.
